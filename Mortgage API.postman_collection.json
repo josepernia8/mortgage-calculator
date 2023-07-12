@@ -1,0 +1,141 @@
+{
+	"info": {
+		"_postman_id": "9aabaa65-34d8-4e7f-9eed-af781825fef7",
+		"name": "Mortgage API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "6342387"
+	},
+	"item": [
+		{
+			"name": "Calculate Mortgage",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"content-type": true
+				}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"propertyPrice\": 500000,\r\n  \"downPayment\": 50000,\r\n  \"annualInterestRate\": 5.12,\r\n  \"amortizationPeriod\": 15,\r\n  \"paymentFrequency\": \"monthly\"\r\n}\r\n"
+				},
+				"url": {
+					"raw": "http://localhost:8000/mortgage",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"mortgage"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Bi-Weekly Frequency",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"propertyPrice\": 500000,\r\n  \"downPayment\": 50000,\r\n  \"annualInterestRate\": 5.12,\r\n  \"amortizationPeriod\": 15,\r\n  \"paymentFrequency\": \"bi-weekly\"\r\n}\r\n"
+						},
+						"url": {
+							"raw": "http://localhost:8000/mortgage",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"mortgage"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				},
+				{
+					"name": "20 Percent DownPayment",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"propertyPrice\": 500000,\r\n  \"downPayment\": 100000,\r\n  \"annualInterestRate\": 5.12,\r\n  \"amortizationPeriod\": 15,\r\n  \"paymentFrequency\": \"monthly\"\r\n}\r\n"
+						},
+						"url": {
+							"raw": "http://localhost:8000/mortgage",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"mortgage"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				},
+				{
+					"name": "Wrong Amortization Period",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"propertyPrice\": 500000,\r\n  \"downPayment\": 50000,\r\n  \"annualInterestRate\": 5.12,\r\n  \"amortizationPeriod\": 17,\r\n  \"paymentFrequency\": \"monthly\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8000/mortgage",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"mortgage"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		}
+	]
+}

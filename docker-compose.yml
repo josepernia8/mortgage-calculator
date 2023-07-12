@@ -1,0 +1,22 @@
+version: '3.9'
+services:
+  api:
+    container_name: api
+    image: node:lts-alpine
+    build: ./api
+    environment:
+      - PORT=8000
+    volumes:
+      - ./api:/app
+    command: npm run dev --prefix ./app
+    ports:
+      - "8000:8000"
+  ui:
+    container_name: ui
+    image: node:lts-alpine
+    build: ./ui
+    volumes:
+      - ./ui:/app
+    command: npm run dev  --prefix ./app -- --host
+    ports:
+      - 4000:4000
